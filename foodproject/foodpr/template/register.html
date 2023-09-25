@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+    <style>
+            .design { display:flex;justify-content:center;text-align:left;font-size: medium; padding-bottom:10px;}
+            .design1 {font-size: 105% ;font-family:helvetica;color:midnightblue;}
+    </style>
+
+</head>
+<body>
+<form action='register' method="post">
+
+<h2 style="text-align :center;font-size:160%;font-family:helvetica;color:midnightblue;">Registration</h2>
+    {% csrf_token %}
+        <label class="design1">Username :</label><br>
+        <input type="text" name="username" size="40" style="height:25px;"><br><br>
+        <label class="design1">first_name :</label><br>
+        <input type="text" name="first_name" size="40" style="height:25px;"><br><br>
+        <label class="design1">last_name :</label><br>
+        <input type="text" name="last_name" size="40" style="height:25px;"><br><br>
+        <label class="design1">Email :</label><br>
+        <input type="email" name="email" size="40" style="height:25px;"><br><br>
+        <label class="design1">Password :</label><br>
+        <input type="password" name="password" size="40" style="height:25px;"><br><br>
+        <label class="design1">Confirm Password :</label><br>
+        <input type="password" name="password1" size="40" style="height:25px;"><br><br>
+        <input type="submit">
+
+</form>
+{% for msg in messages %}
+<h3>{{msg}}</h3>
+{% endfor %}
+</body>
+</html>
